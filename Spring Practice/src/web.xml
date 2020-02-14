@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+        <bean id="monitor" class="spring.Monitor" scope="prototype" autowire="byName">
+        <property name="name" value="samsung"></property>
+        <property name="value" value="10000"></property>
+        
+        </bean>
+        <bean id="keyboard" class="spring.Keyboard">
+        <property name="value" value="800"></property>
+        <property name="colour" value="Black"></property>
+        </bean>
+        
+        <bean id="rrr" class="spring.Monitor" scope="prototype" autowire="constructor">
+		<constructor-arg index="0" value="HP" name="name"></constructor-arg>        
+        <constructor-arg index="1" value="8000" name="value"></constructor-arg>
+        </bean>
+        <bean id="key" class="spring.Keyboard">
+        <constructor-arg index="0" value="50" name="value"></constructor-arg>
+        <constructor-arg index="1" value="white" name="colour"></constructor-arg>
+        </bean>
+        </beans>
